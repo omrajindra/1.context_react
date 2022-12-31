@@ -1,24 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import Button from "./Components/Button";
+import Counter from "./Components/Counter";
+import CounterHolder, { CounterContext } from "./Context/CounterHolder";
+import { useContext } from "react";
 
 function App() {
+  const {count} = useContext(CounterContext)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    //<CounterHolder>
+    <div className='flex items-center justify-center w-full h-screen'>
+      <Counter/>
+      <div>
+        RS {count *500}
+      </div>
+      
     </div>
+    //</CounterHolder>
   );
 }
 
